@@ -1,3 +1,3 @@
 from . import formulas
-from . import lists
+from . import collections
 from . import instances
