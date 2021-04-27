@@ -25,16 +25,8 @@ def main():
     api.add_resource(formulas_resources.FormulaResource, '/api/v2/formulas/<int:formula_id>')
     api.add_resource(collections_resources.CollectionResource, '/api/v2/collections/<int:collection_id>')
     api.add_resource(collections_resources.CollectionListResource, '/api/v2/collections')
-    # f = Formula()
-    # f.name = 'name3'
-    # f.essentials = json.dumps([1, 2, 3, 4, 5, 6])
-    # fl = Collection()
-    # fl.name = 'E'
-    # f.collections.append(fl)
-    # s = db_session.create_session()
-    # s.add(f)
-    # s.commit()
-    app.run()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
 
 
 if __name__ == '__main__':

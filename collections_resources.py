@@ -23,11 +23,11 @@ class CollectionResource(Resource):
         res['collection']['formulas'] = [formula.id for formula in collection.formulas]
         return jsonify(res)
 
-    def delete(self, formula_id):
-        abort_if_collection_not_found(formula_id)
+    def delete(self, collection_id):
+        abort_if_collection_not_found(collection_id)
         session = db_session.create_session()
-        formula = session.query(Collection).get(formula_id)
-        session.delete(formula)
+        collection = session.query(Collection).get(collection_id)
+        session.delete(collection)
         session.commit()
         return jsonify({'success': 'OK'})
 
