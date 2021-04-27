@@ -21,10 +21,10 @@ def index():
 
 def main():
     db_session.global_init("db/formulas.db")
-    api.add_resource(formulas_resources.FormulaListResource, '/api/v2/formulas')
-    api.add_resource(formulas_resources.FormulaResource, '/api/v2/formulas/<int:formula_id>')
-    api.add_resource(collections_resources.CollectionResource, '/api/v2/collections/<int:collection_id>')
-    api.add_resource(collections_resources.CollectionListResource, '/api/v2/collections')
+    api.add_resource(formulas_resources.FormulaListResource, '/api/formulas')
+    api.add_resource(formulas_resources.FormulaResource, '/api/formulas/<int:formula_id>')
+    api.add_resource(collections_resources.CollectionResource, '/api/collections/<int:collection_id>')
+    api.add_resource(collections_resources.CollectionListResource, '/api/collections')
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
 
